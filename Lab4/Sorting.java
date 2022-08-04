@@ -1,5 +1,4 @@
 import java.util.Arrays;
-
 public class Sorting <E extends Comparable<E>> implements InterfaceSorting<E> {
     private E[] arr  = null;
     private int size = 0;
@@ -12,7 +11,7 @@ public class Sorting <E extends Comparable<E>> implements InterfaceSorting<E> {
 
     @Override
     public void select() {
-        for (var i = 0; i < arr.length; i++) {
+        for (var i = 0; i < arr.length - 1; i++) {
             var min = i;
             for (var j = i + 1; j < arr.length; j++) {
                 if (arr[j].compareTo(arr[min]) < 0) {
@@ -24,6 +23,7 @@ public class Sorting <E extends Comparable<E>> implements InterfaceSorting<E> {
             arr[i] = temp;
         }
     }
+
     public void mergeSort(int start, int end)
     {
         //Base case
@@ -114,7 +114,6 @@ public class Sorting <E extends Comparable<E>> implements InterfaceSorting<E> {
                 j--;
             }
         }
-
     }
     @Override
     public void quick(int left, int right) {

@@ -15,7 +15,7 @@ public interface ListInterface<E>{
     public Node<E> getLast()throws RuntimeException;
     public Node<E> getNodeByIndexOf(int index);
 
-    //Add element 
+    //Add element
     public void addFirst(E item);
     public void addAfter(Node<E> current, E item)throws NoSuchElementException;
     public void addLast(E item)throws NoSuchElementException;
@@ -32,14 +32,16 @@ public interface ListInterface<E>{
     // public void addBe4(E item) throws NoSuchElementException;
     // public E maxNumber() throws NoSuchElementException;
     public void reverse() throws NoSuchElementException;
-    
+
 
     //Print element
     public String toString();
 
     public void setHead(Node<E> head);
 
-    public Node<E> mergeSort(Node<E> head);
+
+    public void selection ();
+    // public void insertion ();
 
     public void printList (Node<E> head);
 }

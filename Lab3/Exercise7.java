@@ -1,9 +1,8 @@
 public class Exercise7 {
     public static int findMin (int[] arr, int length){
-        int min;
+        int min = 0;
         if (length == 1) {
-            min = arr[0];
-            return min;
+            return arr[0] < min ? arr[0] : min;
         }
         return min = Math.min(arr[0], findMin(arr, length - 1));
 
@@ -18,7 +17,7 @@ public class Exercise7 {
         return countEven(arr, length - 1);
     }
     public static void main(String[] args) {
-        int[] arr = {0,2,3,4,5,6,7,8,9,10};
+        int[] arr = {1,2,3,4,5,0,7,8,9,10};
         System.out.println("Min of array: " + findMin(arr,arr.length));
         System.out.println("Sum of array: " + sum( arr,arr.length));
         System.out.println("Number of even element: " + countEven(arr,arr.length));

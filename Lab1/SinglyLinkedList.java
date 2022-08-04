@@ -1,29 +1,24 @@
 import java.util.*;
 
-public class SinglyLinkedList<E extends Comparable<E>> implements ListInterface<E>{
+public class SinglyLinkedList<E extends Comparable<E>> implements ListInterface<E>{ko
     private int size;
     private Node<E> head;
-
     public SinglyLinkedList(){
         this.size = 0;
         this.head = null;
     }
-
     @Override
     public boolean isEmpty(){return size == 0;}
-
     @Override
     public int size(){return this.size;}
 
     public void setHead(Node<E> node){
         this.head = node;
     }
-
     @Override
     public Node<E> getHead(){
         return head;
     }
-
     @Override
     public E getFirst()throws RuntimeException{
         if (isEmpty()) throw new RuntimeException();
@@ -87,7 +82,7 @@ public class SinglyLinkedList<E extends Comparable<E>> implements ListInterface<
     }
 
     @Override
-    public void addLast(E item)throws NoSuchElementException {
+    public void addLast(E item) throws NoSuchElementException {
         if(isEmpty()) {addFirst(item);}
         Node<E> runNode = head;
         while (runNode.getNext() != null){
@@ -172,8 +167,6 @@ public class SinglyLinkedList<E extends Comparable<E>> implements ListInterface<
         return null;
     }
 
-
-
     @Override
     public String toString() {
         if (isEmpty())
@@ -250,6 +243,25 @@ public class SinglyLinkedList<E extends Comparable<E>> implements ListInterface<
         return sortedList;
     }
 
+    public void selection (){
+        Node<E> currentNode = head;
+        while (currentNode != null) {
+            Node<E> min = currentNode;
+            Node<E> r = currentNode.getNext();
+
+            while (r != null){
+                if (min.getData().compareTo(r.getData()) > 0){
+                    min = r;
+                }
+                r = r.getNext();
+            }
+            E x = currentNode.getData();
+            currentNode.setData(min.getData());
+            min.setData(x);
+            currentNode = currentNode.getNext();
+        }
+    }
+
     public void printList(Node<E> node)
     {
         while (isEmpty()) {
@@ -257,6 +269,5 @@ public class SinglyLinkedList<E extends Comparable<E>> implements ListInterface<
             node = node.getNext();
         }
     }
-
 
 }
