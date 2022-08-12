@@ -27,7 +27,7 @@ public class Test {
         // System.out.println();
         // tree.levelOrder();
         // System.out.println();
-        // System.out.println(tree.height());
+        System.out.println(tree.height());
         // System.out.println(tree.getLeftMostOfRight());
         // tree.deleteMin();
         // tree.traverse();
